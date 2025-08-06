@@ -1,0 +1,220 @@
+:root {
+  /* Cores das gemas brasileiras */
+  --gem-emerald: #2e8b57;
+  --gem-emerald-light: #32cd32;
+  --gem-citrine: #ffd700;
+  --gem-citrine-light: #ffa500;
+  --gem-sapphire: #4169e1;
+  --gem-sapphire-light: #6495ed;
+  --gem-agate: #ff6b47;
+  --gem-agate-light: #ff4500;
+}
+
+/* Tema Claro */
+[data-theme="light"] {
+  --bg-primary: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+  --bg-secondary: rgba(255, 255, 255, 0.8);
+  --bg-tertiary: rgba(255, 255, 255, 0.9);
+  --bg-quaternary: rgba(248, 250, 252, 0.95);
+  --border-primary: rgba(0, 0, 0, 0.1);
+  --border-secondary: rgba(0, 0, 0, 0.05);
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --shadow-primary: rgba(0, 0, 0, 0.1);
+  --shadow-secondary: rgba(0, 0, 0, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Onest", sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 20px 0;
+  position: relative;
+}
+
+.logo-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 30px;
+}
+
+.brazilian-crystal {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  margin: 0 auto;
+  animation: float 6s ease-in-out infinite;
+}
+
+.gem {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    var(--gem-emerald) 0%,
+    var(--gem-emerald-light) 25%,
+    var(--gem-citrine) 50%,
+    var(--gem-sapphire) 75%,
+    var(--gem-agate) 100%
+  );
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation: morphing 8s ease-in-out infinite;
+  box-shadow: 0 4px 30px rgba(46, 139, 87, 0.3),
+    inset 0 0 30px rgba(255, 255, 255, 0.2);
+  filter: brightness(1.1) saturate(1.2);
+}
+
+.gem::before {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 60%;
+  height: 60%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    transparent 50%,
+    rgba(255, 215, 0, 0.2) 100%
+  );
+  border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
+  animation: innerGlow 4s ease-in-out infinite alternate;
+}
+
+.gem::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  width: 30%;
+  height: 30%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  border-radius: 50% 50% 40% 60% / 40% 60% 50% 50%;
+  animation: highlight 3s ease-in-out infinite;
+}
+
+@keyframes morphing {
+  0%,
+  100% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+    transform: rotate(90deg) scale(1.05);
+  }
+  50% {
+    border-radius: 50% 50% 50% 50% / 60% 40% 60% 40%;
+    transform: rotate(180deg) scale(1);
+  }
+  75% {
+    border-radius: 40% 60% 40% 60% / 30% 70% 30% 70%;
+    transform: rotate(270deg) scale(1.02);
+  }
+}
+
+@keyframes innerGlow {
+  0% {
+    opacity: 0.6;
+    transform: scale(1) rotate(0deg);
+    border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
+  }
+  100% {
+    opacity: 0.9;
+    transform: scale(1.1) rotate(180deg);
+    border-radius: 60% 40% 40% 60% / 60% 60% 40% 40%;
+  }
+}
+
+@keyframes highlight {
+  0%,
+  100% {
+    opacity: 0.8;
+    transform: translate(0px) translate(0px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(3px) translateY(-2px);
+  }
+}
+
+.logo-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #1e293b, #475569);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  letter-spacing: -0.5px;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+.main-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  background: linear-gradient(
+    135deg,
+    var(--gem-emerald) 0%,
+    var(--gem-citrine) 30%,
+    var(--gem-sapphire) 60%,
+    var(--gem-agate) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}

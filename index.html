@@ -13,19 +13,21 @@
     />
   </head>
   <body data-theme="light">
-    <main class="container">
+    <main class="container" aria-labelledby="app-title">
       <header class="page-header">
-        <div class="logo-container">
+        <div class="logo-container" aria-hidden="true">
           <div class="brazilian-crystal">
             <div class="gem"></div>
           </div>
           <div class="logo-text">JO.ia</div>
         </div>
-        <h1 class="main-title">JO.ia</h1>
+
+        <h1 id="app-title" class="main-title">JO.ia</h1>
         <p class="subtitle">Seu assistente inteligente</p>
       </header>
 
-      <section class="app-interface">
+      <form class="app-interface" id="askForm">
+        <!-- Chave API Key -->
         <div class="form-group">
           <label for="apiKey" class="form-label">🔑 API Key GEMINI</label>
           <input
@@ -36,7 +38,24 @@
             autocomplete="off"
           />
         </div>
-      </section>
+
+        <!-- Input para Pergunta -->
+
+        <!-- Botões 'Perguntar' e 'Limpar' -->
+
+        <!--  Area de resposta -->
+        <section
+          id="responseArea"
+          class="response-area"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          <header class="response-header">
+            <h2 class="response-title">💎 Resposta da JO.ia</h2>
+          </header>
+          <div id="responseContent" class="response-content"></div>
+        </section>
+      </form>
     </main>
   </body>
 </html>

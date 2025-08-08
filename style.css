@@ -285,3 +285,24 @@ body {
   color: var(--text-muted);
   font-style: italic;
 }
+
+.response-area {
+  margin: 0 auto;
+  padding: 40px;
+  background: var(--bg-tertiary);
+  border: 2px solid rgba(46, 139, 87, 0.3);
+  border-radius: 12px;
+  color: var(--text-primary);
+  font-family: "Onest", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  min-height: 100px;
+  transition: all 0.3s ease;
+  white-space: pre-wrap;
+}
+
+.response-content-box:empty::before {
+  content: "Aguardando resposta...";
+  color: var(--text-muted);
+  font-style: italic;
+}

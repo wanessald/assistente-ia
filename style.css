@@ -286,6 +286,40 @@ body {
   font-style: italic;
 }
 
+.question-textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 20px;
+  background: var(--bg-tertiary);
+  border: 2px solid rgba(65, 105, 225, 0.3);
+  border-radius: 12px;
+  color: var(--bg-primary);
+  font-family: "Onest", sans-serif;
+  font-size: 1rem;
+  resize: vertical;
+  transition: all 0.3s ease;
+  line-height: 1.6;
+}
+
+.question-textarea:focus {
+  outline: none;
+  border-color: var(--gem-sapphire);
+  box-shadow: 0 0 20px rgba(65, 105, 225, 0.2);
+}
+
+.question-textarea::placeholder {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.keyboard-hint {
+  text-align: center;
+  margin-top: 15px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
 .response-area {
   margin: 0 auto;
   padding: 40px;

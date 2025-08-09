@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const res =
         data.candidates?.[0]?.content?.parts?.[0]?.text || "Sem resposta";
-      responseContent.textContent = res;
+      responseContent.innerHTML=marked.parse(res)
     } catch (error) {
       console.error("Erro na requisição:", error);
       responseContent.textContent = "Erro ao buscar resposta.";
@@ -66,4 +66,5 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
     sendQuestion();
   });
+  formatResponseText(responseContent.text)
 });

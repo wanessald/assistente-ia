@@ -36,7 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
           ],
           generationConfig: {
             temperature: 0.7,
+<<<<<<< HEAD
             // maxOutputTokens: 100,
+=======
+>>>>>>> 017e615a14442da53da1943dba496ae1d0bdba63
           },
         }),
       });

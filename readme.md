@@ -36,11 +36,6 @@ JO.ia é um assistente inteligente que utiliza a API Gemini para responder pergu
 
 - Alize Leal Pereira
 - Izabela Sousa
-- Jennifer Caroline de Oliveira Adomaitis
-- Lucas Matheus Oliveira Peixoto
-- Mariana França Rodrigues
-- Mateus Lima Francisco
-- Rafael do Monte Paixão
 - Renata Pereira dos Santos
 - Wanessa Leite Melgar Dantas
 

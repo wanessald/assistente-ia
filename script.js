@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
           ],
           generationConfig: {
             temperature: 0.7,
-            maxOutputTokens: 100,
           },
         }),
       });

@@ -320,6 +320,43 @@ body {
   font-style: italic;
 }
 
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 12px;
+  font-family: "Onest", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: linear-gradient(
+    135deg,
+    var(--gem-emerald),
+    var(--gem-emerald-light)
+  );
+  color: white;
+  box-shadow: 0 4px 20px rgba(46, 139, 87, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(46, 139, 87, 0.4);
+}
+
 .response-area {
   margin: 0 auto;
   padding: 40px;

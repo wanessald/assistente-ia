@@ -4,6 +4,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const askForm = document.querySelector("#askForm");
   const responseContent = document.querySelector("#responseContent");
 
+  textAreaQuestion.addEventListener("keydown", (event) => {
+    if (event.ctrlKey && event.key === "Enter") {
+      event.preventDefault();
+      askForm.requestSubmit();
+    }
+  });
+
   async function sendQuestion() {
     const apiKey = inputApiKey.value.trim();
     const question = textAreaQuestion.value.trim();
@@ -36,10 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
           ],
           generationConfig: {
             temperature: 0.7,
-<<<<<<< HEAD
-            // maxOutputTokens: 100,
-=======
->>>>>>> 017e615a14442da53da1943dba496ae1d0bdba63
           },
         }),
       });

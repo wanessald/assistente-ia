@@ -358,22 +358,33 @@ body {
 }
 
 .response-area {
-  margin: 0 auto;
-  padding: 40px;
-  background: var(--bg-tertiary);
-  border: 2px solid rgba(46, 139, 87, 0.3);
+  margin-top: 30px;
+  padding: 25px;
+  background: var(--bg-quaternary);
+  border: 2px solid rgba(255, 215, 0, 0.3);
   border-radius: 12px;
-  color: var(--text-primary);
-  font-family: "Onest", sans-serif;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  min-height: 100px;
-  transition: all 0.3s ease;
-  white-space: pre-wrap;
+  min-height: 150px;
+  position: relative;
+  /* display: none; */
 }
 
-.response-content-box:empty::before {
-  content: "Aguardando resposta...";
-  color: var(--text-muted);
-  font-style: italic;
+.response-area.active {
+  display: block;
+}
+
+.response-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.response-title {
+  font-weight: 600;
+  color: var(--gem-citrine);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
